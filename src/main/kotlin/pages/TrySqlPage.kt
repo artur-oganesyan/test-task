@@ -7,7 +7,6 @@ import data.Row
 import io.qameta.allure.Step
 import org.openqa.selenium.By
 import org.openqa.selenium.Keys
-import utils.JSExecutor
 
 class TrySqlPage {
 
@@ -27,7 +26,6 @@ class TrySqlPage {
     fun fillSqlInput(text: String): TrySqlPage {
         sqlInputWrapper.click()
         sqlInputTextArea.sendKeys(text)
-        JSExecutor().insertText(text)
         return this
     }
 
