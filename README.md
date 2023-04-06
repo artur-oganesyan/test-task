@@ -1,4 +1,4 @@
-## Run in Docker-Compose in Selenoid
+## Run in Docker-Compose with Selenoid
 ```shell
 chmod +x start_in_docker.sh
 ./start_in_docker.sh
