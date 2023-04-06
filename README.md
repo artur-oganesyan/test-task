@@ -3,7 +3,7 @@
 chmod +x start_in_docker.sh
 ./start_in_docker.sh
 ```
-Selenoid url: http://0.0.0.0:8080/#/
+Selenoid UI: http://0.0.0.0:8080/#/
 
 ## Local run
 ```shell
