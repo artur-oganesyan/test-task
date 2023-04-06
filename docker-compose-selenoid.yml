@@ -1,0 +1,19 @@
+services:
+  selenoid:
+    image: aerokube/selenoid:latest-release
+    network_mode: bridge
+    ports:
+      - 4444:4444
+    volumes:
+      - ./browsers.json:/etc/selenoid/browsers.json:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+  selenoid-ui:
+    image: aerokube/selenoid-ui:latest-release
+    network_mode: bridge
+    ports:
+      - 8080:8080
+    links:
+      - selenoid
+    depends_on:
+      - selenoid
+    command: [ "--selenoid-uri", "http://selenoid:4444" ]

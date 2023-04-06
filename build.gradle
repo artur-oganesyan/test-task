@@ -1,0 +1,42 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version "$kotlin_version"
+    id 'io.qameta.allure' version "$allure_plugin_version"
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.codeborne:selenide:6.12.4'
+
+    implementation "io.qameta.allure:allure-selenide:$allure_version"
+    implementation "io.qameta.allure:allure-junit5-assert:${allure_version}"
+
+    implementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+
+    implementation 'com.github.javafaker:javafaker:1.0.2'
+}
+
+allure {
+    autoconfigure = true
+    version = "$allure_version"
+
+    useJUnit5 {
+        version = "$allure_version"
+    }
+}
+
+test {
+    useJUnitPlatform()
+
+    systemProperty "junit.jupiter.extensions.autodetection.enabled", "true"
+
+    reports {
+        html.required = false
+        junitXml.required = false
+    }
+}

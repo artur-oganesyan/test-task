@@ -1,0 +1,9 @@
+services:
+  autotests:
+    build:
+      context: .
+    network_mode: host
+    volumes:
+      - ./reports:/app/reports
+    environment:
+      - REMOTE=
