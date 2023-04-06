@@ -1,3 +1,7 @@
+> Примечание  
+> Cпециально не стал в тестах использовать JS-инъекцию, чтобы поведение было более приближено к реальному пользователю.  
+> Но реализация через JS есть в `utils/JSExecutor`
+
 ## Run in Docker-Compose with Selenoid
 ```shell
 chmod +x start_in_docker.sh
